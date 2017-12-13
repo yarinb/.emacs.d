@@ -1,5 +1,5 @@
 (use-package dired
-  :ensure nil ;; package is bundled with emacs
+  :ensure nil
   :init
   ;; show human readable sizes in dired
   (setq dired-listing-switches "-alh")

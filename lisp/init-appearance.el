@@ -18,15 +18,14 @@
 
 ;; highlight current line
 (use-package hl-line
-  :ensure nil ;; package is bundled with emacs
   :config
   (global-hl-line-mode 1))
 
 ;; set theme
-(use-package doom-themes
+(use-package dracula-theme
   :if (display-graphic-p)
   :config
-  (load-theme 'doom-one t))
+  (load-theme 'dracula t))
 
 ;; highlight matching parentheses
 (use-package paren
@@ -36,8 +35,6 @@
 
 ;; highlight lines exceeding fill-column
 (use-package whitespace
-  :ensure nil ;; package is bundled with emacs
-
   :diminish whitespace-mode
 
   :init

@@ -1,3 +1,10 @@
+(use-package smooth-scrolling
+  :config
+  (require 'smooth-scrolling)
+  (setq scroll-margin 1
+        scroll-step 1
+        scroll-conservatively 9999))
+
 ;; use zap-up-to-char instead of zap-to-char
 (use-package misc
   :ensure nil ;; package is bundled with emacs
@@ -9,6 +16,13 @@
   :diminish subword-mode
   :config
   (add-hook 'prog-mode-hook 'subword-mode))
+
+;; Automatically insert matching braces and quotes
+(electric-pair-mode 1)
+
+(use-package expand-region
+   :commands er/expand-region
+   :bind ("C-=" . er/expand-region))
 
 ;; enable electric-indent-mode
 (use-package electric

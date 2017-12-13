@@ -12,9 +12,11 @@
 (require 'init-package)
 (require 'init-appearance)
 (require 'init-sane-defaults)
+(require 'init-general)
+(require 'init-help)
 (when (eq system-type 'darwin)
   (require 'init-mac))
-(require 'init-ido)
+(require 'init-ivy)
 (require 'init-dired)
 (require 'init-projectile)
 (require 'init-server)
@@ -35,7 +37,7 @@
 (require 'init-tramp)
 (require 'init-flycheck)
 (require 'init-org)
-(require 'init-fish-mode)
 
 ;; local settings (optional)
-(require 'init-local nil t)
+(load custom-file 'noerror)
+
