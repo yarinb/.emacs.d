@@ -46,4 +46,10 @@
 ;; follow symlinks to files under version control
 (setq vc-follow-symlinks t)
 
+(use-package diff-hl
+  :defer t
+  :init
+  (add-hook 'prog-mode-hook 'diff-hl-mode)
+  (add-hook 'dired-mode-hook 'diff-hl-dired-mode))
+
 (provide 'init-git)
