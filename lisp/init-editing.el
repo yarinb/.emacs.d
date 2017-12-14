@@ -46,6 +46,11 @@
   ;; make source files read-only when visiting
   (setq find-function-after-hook (lambda () (read-only-mode 1))))
 
+(use-package linum
+  :ensure nil
+  :config
+  (add-hook 'prog-mode-hook 'linum-mode))
+
 (defun show-file-name ()
   "Show the full path file name in the minibuffer and add it to the kill ring."
   (interactive)

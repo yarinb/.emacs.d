@@ -36,8 +36,10 @@
 (use-package counsel
   :ensure t
   :bind (
-    ("M-x" . counsel-M-x)
-    ("C-h C-k" . counsel-descbinds)
-    ))
+         ("M-x" . counsel-M-x)
+         ("C-h C-k" . counsel-descbinds)
+         ("C-x C-f" . counsel-find-file)
+         ("C-c k" . counsel-ag)
+         ))
 
 (provide 'init-ivy)
