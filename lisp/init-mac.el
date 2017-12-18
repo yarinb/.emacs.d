@@ -1,10 +1,3 @@
-;; use source code pro font if available
-;; https://github.com/adobe-fonts/source-code-pro
-(let ((font-family "Iosevka"))
-  (when (and (display-graphic-p) (member font-family (font-family-list)))
-    (set-face-attribute 'default nil :family font-family)
-    (set-face-attribute 'default nil :height 140)))
-
 ;; configure modifiers
 (setq mac-option-modifier 'super)
 (setq mac-command-modifier 'meta)

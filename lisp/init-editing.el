@@ -1,3 +1,6 @@
+;; Word wrap in text 
+(add-hook 'text-mode-hook 'global-visual-line-mode)
+
 (use-package smooth-scrolling
   :config
   (require 'smooth-scrolling)
@@ -48,8 +51,17 @@
 
 (use-package linum
   :ensure nil
+  :init
+  ;; Set two spaces after linum
+  (setq linum-format "%d ")
   :config
   (add-hook 'prog-mode-hook 'linum-mode))
+
+;; move lines up/down
+(use-package move-text
+  :bind
+  (([(meta shift up)] . move-text-up)
+   ([(meta shift down)] . move-text-down)))
 
 (defun show-file-name ()
   "Show the full path file name in the minibuffer and add it to the kill ring."

@@ -1,6 +1,9 @@
 ;; use soft tabs
 (setq-default indent-tabs-mode nil)
 
+;; replace highlighted text
+(delete-selection-mode 1)
+
 ;; make prompts accept y or n
 (defalias 'yes-or-no-p #'y-or-n-p)
 
@@ -65,8 +68,7 @@
 
 ;; backup files
 (setq make-backup-files t
-      backup-directory-alist `(("." . ,(expand-file-name "backup"
-                                                         user-emacs-directory)))
+      backup-directory-alist `(("." . ,(expand-file-name (concat user-emacs-directory "backups"))))
       backup-by-copying t
       delete-old-versions t
       version-control t
