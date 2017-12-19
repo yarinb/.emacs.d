@@ -63,6 +63,11 @@
   (([(meta shift up)] . move-text-up)
    ([(meta shift down)] . move-text-down)))
 
+;; Show indent guides
+(use-package highlight-indent-guides
+  :init (setq-default highlight-indent-guides-method 'character)
+  :config (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+
 (defun show-file-name ()
   "Show the full path file name in the minibuffer and add it to the kill ring."
   (interactive)
