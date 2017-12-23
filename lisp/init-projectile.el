@@ -27,6 +27,6 @@
   (projectile-global-mode 1)
   (use-package counsel-projectile
     :config
-    (counsel-projectile-on)))
+    (counsel-projectile-mode 1)))
 
 (provide 'init-projectile)
