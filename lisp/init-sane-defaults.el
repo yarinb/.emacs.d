@@ -13,6 +13,9 @@
 ;; disable audible bell
 (setq ring-bell-function #'ignore)
 
+;; change cursor-type
+(setq-default cursor-type 'bar)
+
 ;; scroll one line at a time
 (setq mouse-wheel-scroll-amount
       '(1
