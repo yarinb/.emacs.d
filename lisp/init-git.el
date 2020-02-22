@@ -1,12 +1,15 @@
 ;; use appropiate git-mode for .gitconfig and .gitignore extensions
 (use-package gitignore-mode
+  :ensure t
   :mode ("gitignore\\'" . gitignore-mode))
 
 (use-package gitconfig-mode
+  :ensure t
   :mode ("gitconfig\\'" . gitconfig-mode))
 
 ;; use flyspell when writing commit messages
 (use-package git-commit
+  :ensure t
   :config
   (add-hook 'git-commit-mode-hook
             (lambda ()
@@ -29,6 +32,7 @@
   (magit-diff-visit-file-other-window t))
 
 (use-package magit
+  :ensure t
   :init
   ;; disable gravatars
   (setq magit-revision-show-gravatars nil)
@@ -47,6 +51,7 @@
 (setq vc-follow-symlinks t)
 
 (use-package diff-hl
+  :ensure t
   :defer t
   :init
   (add-hook 'prog-mode-hook 'diff-hl-mode)

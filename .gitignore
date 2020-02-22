@@ -64,3 +64,5 @@ backups/
 # Cask
 /.cask/
 /smex-items
+/.cache/
+/history

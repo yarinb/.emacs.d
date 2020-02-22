@@ -4,6 +4,7 @@
 
   :config
   (unless (server-running-p)
-    (server-start)))
+    (server-start))
+  :hook (after-init . server-mode))
 
 (provide 'init-server)

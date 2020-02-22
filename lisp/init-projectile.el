@@ -1,4 +1,5 @@
 (use-package projectile
+  :ensure t
   :diminish projectile-mode
 
   :init
@@ -26,6 +27,7 @@
   ;; enable projectile mode in all buffers
   (projectile-global-mode 1)
   (use-package counsel-projectile
+    :ensure t
     :config
     (counsel-projectile-mode 1)))
 

@@ -2,7 +2,7 @@
   :ensure nil
   :init
   ;; show human readable sizes in dired
-  (setq dired-listing-switches "-alh")
+  ;;(setq dired-listing-switches "-alh")
 
   ;; show human readable free space
   (setq directory-free-space-args "-h")

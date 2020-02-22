@@ -1,13 +1,6 @@
 ;; Word wrap in text 
 (add-hook 'text-mode-hook 'global-visual-line-mode)
 
-(use-package smooth-scrolling
-  :config
-  (require 'smooth-scrolling)
-  (setq scroll-margin 1
-        scroll-step 1
-        scroll-conservatively 9999))
-
 ;; use zap-up-to-char instead of zap-to-char
 (use-package misc
   :ensure nil ;; package is bundled with emacs
@@ -23,11 +16,14 @@
 ;; Automatically insert matching braces and quotes
 (electric-pair-mode 1)
 
+;; Expand region with C-=
+;; Contract region with C-- C-= (ctrl-minus key)
 (use-package expand-region
    :commands er/expand-region
    :bind ("C-=" . er/expand-region))
 
 ;; enable electric-indent-mode
+;; automatically indents the line after every <RET> you type
 (use-package electric
   :ensure nil ;; package is bundled with emacs
   :config
@@ -37,25 +33,6 @@
 (use-package sh-script
   :ensure nil ;; package is bundled with emacs
   :mode ("z\\(sh[^/]*\\|login\\|logout\\|profile\\)\\'" . sh-mode))
-
-;; find function definitions
-(use-package find-func
-  :ensure nil ;; package is bundled with emacs
-
-  :bind (("C-h C-f" . find-function-other-window)
-         ("C-h C-k" . find-function-on-key))
-
-  :config
-  ;; make source files read-only when visiting
-  (setq find-function-after-hook (lambda () (read-only-mode 1))))
-
-(use-package linum
-  :ensure nil
-  :init
-  ;; Set two spaces after linum
-  (setq linum-format "%d ")
-  :config
-  (add-hook 'prog-mode-hook 'linum-mode))
 
 ;; move lines up/down
 (use-package move-text
